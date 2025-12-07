@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SatelliteData.io - Explore Earth From Outer Space",
+  title: "GeoSpectra - Explore Earth From Outer Space",
   description:
     "Access real-time satellite data through our powerful API. Transform Earth observation into actionable insights.",
 };

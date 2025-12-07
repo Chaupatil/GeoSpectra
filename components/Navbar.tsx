@@ -28,7 +28,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2 group">
             <Satellite className="h-8 w-8 text-cyan-400 group-hover:text-cyan-300 transition-all group-hover:rotate-12" />
             <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              SatelliteData.io
+              GeoSpectra
             </span>
           </Link>
 

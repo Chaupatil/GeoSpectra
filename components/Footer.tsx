@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Satellite className="h-8 w-8 text-cyan-400" />
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                SatelliteData.io
+                GeoSpectra
               </span>
             </div>
             <p className="text-sm text-gray-500">
@@ -130,7 +130,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500 mb-4 md:mb-0">
-            © 2024 SatelliteData.io. All rights reserved.
+            © 2024 GeoSpectra. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a

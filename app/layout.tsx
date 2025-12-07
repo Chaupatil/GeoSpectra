@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GeoSpectra - Satellite Data API Platform",
+  title: "SatelliteData.io - Explore Earth From Outer Space",
   description:
-    "Access and process Earth observation data through our powerful API",
+    "Access real-time satellite data through our powerful API. Transform Earth observation into actionable insights.",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={inter.className}>{children}</body>
     </html>
   );

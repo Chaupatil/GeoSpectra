@@ -1,6 +1,6 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, Zap } from "lucide-react";
 
 const plans = [
   {
@@ -49,16 +49,17 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section
-      id="pricing"
-      className="py-24 bg-gradient-to-b from-white to-slate-50"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 bg-black relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-900/5 to-black" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[120px]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-400">
             Choose the plan that fits your needs. Scale as you grow.
           </p>
         </div>
@@ -67,58 +68,52 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-2xl ${
+              className={`relative p-8 rounded-2xl backdrop-blur-xl transition-all duration-300 ${
                 plan.popular
-                  ? "bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-2xl scale-105"
-                  : "bg-white border-2 border-slate-200"
+                  ? "bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border-2 border-cyan-500/50 scale-105 shadow-2xl shadow-cyan-500/20"
+                  : "bg-gray-900/50 border border-gray-800 hover:border-gray-700"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-slate-900 px-4 py-1 rounded-full text-sm font-bold">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 flex items-center gap-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                  <Zap size={14} />
                   MOST POPULAR
                 </div>
               )}
 
               <h3
                 className={`text-2xl font-bold mb-2 ${
-                  plan.popular ? "text-white" : "text-slate-900"
+                  plan.popular ? "text-cyan-400" : "text-white"
                 }`}
               >
                 {plan.name}
               </h3>
               <div className="mb-6">
-                <span className="text-4xl font-bold">{plan.price}</span>
-                <span
-                  className={plan.popular ? "text-cyan-100" : "text-gray-600"}
-                >
-                  {plan.period}
+                <span className="text-5xl font-bold text-white">
+                  {plan.price}
                 </span>
+                <span className="text-gray-400 ml-2">{plan.period}</span>
               </div>
 
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check
-                      className={`flex-shrink-0 ${
-                        plan.popular ? "text-cyan-200" : "text-cyan-500"
+                      className={`flex-shrink-0 mt-0.5 ${
+                        plan.popular ? "text-cyan-400" : "text-gray-500"
                       }`}
+                      size={20}
                     />
-                    <span
-                      className={
-                        plan.popular ? "text-cyan-50" : "text-gray-600"
-                      }
-                    >
-                      {feature}
-                    </span>
+                    <span className="text-gray-300">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <button
-                className={`w-full py-3 rounded-full font-semibold transition ${
+                className={`w-full py-3 rounded-full font-semibold transition-all shadow-lg ${
                   plan.popular
-                    ? "bg-white text-cyan-600 hover:bg-gray-100"
-                    : "bg-cyan-500 text-white hover:bg-cyan-600"
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-400 hover:to-blue-400 shadow-cyan-500/50"
+                    : "bg-gray-800 text-white hover:bg-gray-700"
                 }`}
               >
                 {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}

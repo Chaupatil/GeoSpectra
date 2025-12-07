@@ -130,8 +130,9 @@ export default function Footer() {
 
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500 mb-4 md:mb-0">
-            © 2024 GeoSpectra. All rights reserved.
+            © {new Date().getFullYear()} GeoSpectra. All rights reserved.
           </p>
+
           <div className="flex gap-6">
             <a
               href="#"
